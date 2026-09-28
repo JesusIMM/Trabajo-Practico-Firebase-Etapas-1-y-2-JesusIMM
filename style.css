@@ -1,73 +1,161 @@
-/* Contenedor principal de los juegos */
-.catalogo-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Tarjeta en estado normal */
-.tarjetajuego {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    border: 2px solid #333;
-    border-radius: 10px;
-    width: 200px;
-    padding: 15px;
+body {
+    background: linear-gradient(135deg, #0f0c20 0%, #15102a 50%, #06040d 100%);
+    color: #e0e6ed;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+h1, h2 {
     text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.formulario-container {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.form-grupo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+input {
+    flex: 1 1 45%;
+    background: #18152e;
+    border: 1px solid #2e284f;
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-size: 0.95em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #7a769e;
+}
+
+input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 12px rgba(108, 92, 231, 0.4);
+    background: #1f1a3a;
+}
+
+button#agregar {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button#agregar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.5);
+}
+
+.catalogo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjetajuego {
+    background: #151226;
+    border: 1px solid #282247;
+    border-radius: 14px;
+    width: 240px;
+    padding: 16px;
     cursor: pointer;
     overflow: hidden;
-
-    /* Transición dinámica suave */
-    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjetajuego:hover {
-    border-color: #007bff;
+    border-color: #6c5ce7;
+    transform: translateY(-4px);
 }
 
 .portada-img {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
-    border-radius: 6px;
-    transition: height 0.4s ease;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.tarjetajuego h3 {
+    font-size: 1.1em;
+    color: #ffffff;
+    margin-bottom: 6px;
+    text-align: center;
 }
 
 .precio {
     font-size: 1.2em;
-    color: #28a745;
+    color: #00b894;
     font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
 }
 
-/* Campos ocultos por defecto */
 .detalles {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    background: #1c1833;
+    border-radius: 8px;
     text-align: left;
-    background-color: #2a2a2a;
-    border-radius: 6px;
-    padding: 0 10px;
 }
 
-/* --- ESTADO EXPANDIDO (Al hacer clic en el juego) --- */
+.detalles p {
+    font-size: 0.85em;
+    color: #b2bec3;
+    margin: 6px 0;
+}
+
+.detalles p strong {
+    color: #a29bfe;
+}
+
 .tarjetajuego.expandida {
-    width: 260px;
-    border-color: #007bff;
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
-}
-
-.tarjetajuego.expandida .portada-img {
-    height: 300px;
+    border-color: #00b894;
+    box-shadow: 0 10px 25px rgba(0, 184, 148, 0.25);
 }
 
 .tarjetajuego.expandida .detalles {
-    max-height: 150px;
+    max-height: 180px;
     opacity: 1;
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
 }

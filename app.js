@@ -22,12 +22,12 @@ botonagregar.addEventListener('click', () => {
     const plataforma = document.getElementById('plataforma').value
     const genero = document.getElementById('genero').value
     const precio = document.getElementById('precio').value
-    const portada = document.getElementById('portada').value
-    
+    const portada = document.getElementById('portada').value    
     if (id === "" || titulo === "" || plataforma === "" || genero === "" || precio === "" || portada === "") {
         alert("Por favor completa todos los campos antes de guardar.")
         return
     }
+    
     set(ref(db, 'videojuegos/' + id), {
         id: id,
         titulo: titulo,
@@ -57,7 +57,7 @@ onValue(ref(db, 'videojuegos/'), (datosjuegos) => {
             Object.keys(datos).forEach((key) => {
                 const juego = datos[key]
                 const tarjeta = document.createElement('div')
-                tarjeta.classList.add('tarjetajuego')
+                tarjeta.classList.add('tarjetajuego')               
                 tarjeta.innerHTML = `
                     <img src="${juego.portada}" alt="${juego.titulo}" class="portada-img">
                     <h3>${juego.titulo}</h3>
@@ -68,7 +68,7 @@ onValue(ref(db, 'videojuegos/'), (datosjuegos) => {
                         <p><strong>Plataforma:</strong> ${juego.plataforma}</p>
                         <p><strong>Género:</strong> ${juego.genero}</p>
                     </div>
-                `
+                ` 
                 tarjeta.addEventListener('click', () => {
                     tarjeta.classList.toggle('expandida')
                 })
