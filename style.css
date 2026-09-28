@@ -1,0 +1,73 @@
+/* Contenedor principal de los juegos */
+.catalogo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Tarjeta en estado normal */
+.tarjetajuego {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+
+    /* Transición dinámica suave */
+    transition: all 0.4s ease;
+}
+
+.tarjetajuego:hover {
+    border-color: #007bff;
+}
+
+.portada-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: height 0.4s ease;
+}
+
+.precio {
+    font-size: 1.2em;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Campos ocultos por defecto */
+.detalles {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    text-align: left;
+    background-color: #2a2a2a;
+    border-radius: 6px;
+    padding: 0 10px;
+}
+
+/* --- ESTADO EXPANDIDO (Al hacer clic en el juego) --- */
+.tarjetajuego.expandida {
+    width: 260px;
+    border-color: #007bff;
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.tarjetajuego.expandida .portada-img {
+    height: 300px;
+}
+
+.tarjetajuego.expandida .detalles {
+    max-height: 150px;
+    opacity: 1;
+    padding: 10px;
+    margin-top: 10px;
+}
