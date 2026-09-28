@@ -4,6 +4,16 @@
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#catalogo {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 body {
     background: linear-gradient(135deg, #0f0c20 0%, #15102a 50%, #06040d 100%);
