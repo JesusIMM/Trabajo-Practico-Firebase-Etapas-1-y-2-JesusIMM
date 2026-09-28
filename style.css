@@ -154,7 +154,7 @@ button#agregar:hover {
 }
 
 .tarjetajuego.expandida .detalles {
-    max-height: 180px;
+    max-height: 250px;
     opacity: 1;
     padding: 12px;
     margin-top: 10px;
