@@ -29,15 +29,15 @@ botonagregar.addEventListener('click', () => {
         return
     }
 
-    const referenciaJuego = ref(db, 'videojuegos/' + id)
+    const infojuego = ref(db, 'videojuegos/' + id)
 
-    get(referenciaJuego).then((snapshot) => {
-        if (snapshot.exists()) {
+    get(infojuego).then((verid) => {
+        if (verid.exists()) {
             alert("El ID ingresado ya está en uso. Por favor ingresa un ID diferente.")
             return
         }
 
-        set(referenciaJuego, {
+        set(infojuego, {
             id: id,
             titulo: titulo,
             plataforma: plataforma,
