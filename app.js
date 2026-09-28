@@ -29,10 +29,10 @@ botonagregar.addEventListener('click', () => {
         return
     }
 
-    const referenciaid = ref(db, 'videojuegos/' + id)
+    const referenciaJuego = ref(db, 'videojuegos/' + id)
 
-    get(referenciaid).then((idexiste) => {
-        if (idexiste.exists()) {
+    get(referenciaJuego).then((snapshot) => {
+        if (snapshot.exists()) {
             alert("El ID ingresado ya está en uso. Por favor ingresa un ID diferente.")
             return
         }
@@ -60,26 +60,27 @@ botonagregar.addEventListener('click', () => {
 const contenedorcatalogo = document.getElementById('catalogo')
 
 onValue(ref(db, 'videojuegos/'), (datosjuegos) => {
-const datos = datosjuegos.val()
-if (contenedorcatalogo) {
-    contenedorcatalogo.innerHTML = ""
-    if (datos) {
-        Object.keys(datos).forEach((key) => {
-            const juego = datos[key]
-            const tarjeta = document.createElement('div')
-            tarjeta.classList.add('tarjetajuego')                
-            tarjeta.innerHTML = `
-                <img src="${juego.portada}" alt="${juego.titulo}" class="portada-img">
-                <h3>${juego.titulo}</h3>
-                <p class="precio">$${juego.precio}</p>
-                <div class="detalles">
-                    <p><strong>Nombre:</strong> ${juego.titulo}</p>
-                    <p><strong>ID:</strong> ${juego.id}</p>
-                    <p><strong>Plataforma:</strong> ${juego.plataforma}</p>
-                    <p><strong>Género:</strong> ${juego.genero}</p>
-                    <p><strong>Precio:</strong> $${juego.precio}</p>
-                </div>
-            `
+    const datos = datosjuegos.val()
+    if (contenedorcatalogo) {
+        contenedorcatalogo.innerHTML = ""
+        if (datos) {
+            Object.keys(datos).forEach((key) => {
+                const juego = datos[key]
+                const tarjeta = document.createElement('div')
+                tarjeta.classList.add('tarjetajuego') 
+                tarjeta.innerHTML = `
+                    <img src="${juego.portada}" alt="${juego.titulo}" class="portada-img">
+                    <h3>${juego.titulo}</h3>
+                    <p class="precio">$${juego.precio}</p>
+
+                    <div class="detalles">
+                        <p><strong>Nombre:</strong> ${juego.titulo}</p>
+                        <p><strong>ID:</strong> ${juego.id}</p>
+                        <p><strong>Plataforma:</strong> ${juego.plataforma}</p>
+                        <p><strong>Género:</strong> ${juego.genero}</p>
+                        <p><strong>Precio:</strong> $${juego.precio}</p>
+                    </div>
+                ` 
                 tarjeta.addEventListener('click', () => {
                     tarjeta.classList.toggle('expandida')
                 })
