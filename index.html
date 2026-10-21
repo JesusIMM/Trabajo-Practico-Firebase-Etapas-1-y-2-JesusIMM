@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Videojuegos</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="form">
-        <h1>Agrega tu videojuego</h1>
-        <input type="number" name="ID" id="ID" placeholder="ID (Identificador único)" />
-        <input type="text" id="titulo" placeholder="Título" />
-        <input type="text" id="plataforma" placeholder="Plataforma" />
-        <input type="text" id="genero" placeholder="Género" />   
-        <input type="number" name="" id="precio" placeholder="Ingresa el precio">   
-        <input type="url" id="portada" placeholder="URL de la portada" >
-        <button id="agregar">Agregar</button>
+<div class="formulario-container">
+    <h2>Registrar Videojuego</h2>
+    <div class="form-grupo">
+        <input type="text" id="titulo" placeholder="Título del juego">
+        <input type="text" id="plataforma" placeholder="Plataforma">
+        <input type="text" id="genero" placeholder="Género">
+        <input type="text" id="precio" placeholder="Precio">
+        <input type="url" id="portada" placeholder="URL de la portada">
     </div>
-
-    <div id="catalogo" class="container"></div>
-
-    <script src="app.js" type="module"></script>
-</body>
-</html>
+    <button id="agregar">Agregar Videojuego</button>
+</div>
+<div class="buscador-container">
+    <input type="text" id="buscador" placeholder="Buscar juego por título...">
+</div>
+<div id="catalogo" class="catalogo-container"></div>

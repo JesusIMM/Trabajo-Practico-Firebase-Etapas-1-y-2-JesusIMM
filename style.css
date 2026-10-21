@@ -169,3 +169,23 @@ button#agregar:hover {
     padding: 12px;
     margin-top: 10px;
 }
+.buscador-container {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+#buscador {
+    width: 100%;
+    background: #18152e;
+    border: 1px solid #2e284f;
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: #ffffff;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+#buscador:focus {
+    border-color: #00b894;
+    box-shadow: 0 0 12px rgba(0, 184, 148, 0.4);
+}
