@@ -1,15 +1,29 @@
-<div class="formulario-container">
-    <h2>Registrar Videojuego</h2>
-    <div class="form-grupo">
-        <input type="text" id="titulo" placeholder="Título del juego">
-        <input type="text" id="plataforma" placeholder="Plataforma">
-        <input type="text" id="genero" placeholder="Género">
-        <input type="text" id="precio" placeholder="Precio">
-        <input type="url" id="portada" placeholder="URL de la portada">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Videojuegos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Tienda de Videojuegos</h1>
+    <div class="formulario-container">
+        <h2>Registrar Videojuego</h2>
+        <div class="form-grupo">
+            <input type="text" id="titulo" placeholder="Título del juego">
+            <input type="text" id="plataforma" placeholder="Plataforma">
+            <input type="text" id="genero" placeholder="Género">
+            <input type="text" id="precio" placeholder="Precio">
+            <input type="url" id="portada" placeholder="URL de la portada">
+        </div>
+        <button id="agregar">Agregar Videojuego</button>
     </div>
-    <button id="agregar">Agregar Videojuego</button>
-</div>
-<div class="buscador-container">
-    <input type="text" id="buscador" placeholder="Buscar juego por título...">
-</div>
-<div id="catalogo" class="catalogo-container"></div>
+    <div class="buscador-container">
+        <input type="text" id="buscador" placeholder="Buscar juego por título...">
+    </div>
+    <div id="catalogo" class="catalogo-container"></div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
